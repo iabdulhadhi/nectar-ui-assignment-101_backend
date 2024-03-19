@@ -9,11 +9,11 @@ Nectar is a location listing application. This project offers a user-friendly ex
 
 To install this project, follow these steps:
 
-```bash
 1. Clone the repository:
 
 git clone [<repository_url>](https://github.com/iabdulhadhi/nectar-ui-assignment-101_backend)
 
+```bash
 2. Navigate to the project directory:
 cd nectar-assignment-101
 
