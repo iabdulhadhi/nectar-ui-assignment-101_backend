@@ -12,7 +12,7 @@ To install this project, follow these steps:
 ```bash
 1. Clone the repository:
 
-git clone <repository_url>
+git clone [<repository_url>](https://github.com/iabdulhadhi/nectar-ui-assignment-101_backend)
 
 2. Navigate to the project directory:
 cd nectar-assignment-101
