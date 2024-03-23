@@ -1,4 +1,5 @@
 const Location = require('../models/Location');
+const moment = require('moment');
 
 const handleError = (res, err) => {
   res.status(500).json({
@@ -27,12 +28,17 @@ const LocationController = {
     }
   },
 
-  async getLocations(req, res) {
+    async getLocations(req, res) {
     try {
-      const locations = await Location.find();
+      const locations = await Location.find().sort({ createdAt: -1 });
+      const formattedLocations = locations.map(location => ({
+        ...location.toObject(),
+        createdAt: moment(location.createdAt).format('YYYY-MM-DD HH:mm:ss'),
+        updatedAt: moment(location.updatedAt).format('YYYY-MM-DD HH:mm:ss')
+      }));
       res.status(200).json({
         type: "success",
-        result: locations
+        result: formattedLocations
       });
     } catch (err) {
       handleError(res, err);
